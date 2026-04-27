@@ -1,0 +1,18 @@
+__pycache__/
+*.py[cod]
+
+# Local outputs generated when scripts are run
+outputs/
+results/
+figures/
+
+# Raw single-cell objects are large and should stay local.
+data/*
+!data/README.md
+!data/.gitkeep
+
+.ipynb_checkpoints/
+.DS_Store
+*.h5ad
+*.h5
+*.loom

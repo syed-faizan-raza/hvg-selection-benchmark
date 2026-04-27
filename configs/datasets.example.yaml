@@ -1,0 +1,35 @@
+# Copy this file to configs/datasets.local.yaml and edit the paths.
+# Raw data are intentionally not committed to the repository.
+
+datasets:
+  pbmc3k_smoke:
+    description: "Built-in Scanpy PBMC3k dataset for quick local smoke tests."
+    source: "pbmc3k"
+    label_key:
+    batch_key:
+    min_cells_fraction: 0.01
+
+  pbmc10k:
+    description: "10x Genomics PBMC 10k dataset with external or transferred cell-type labels."
+    source: "data/pbmc10k_filtered_feature_bc_matrix.h5"
+    label_key: "celltype"
+    batch_key:
+    min_cells_fraction: 0.01
+
+  chd30k:
+    description: "Congenital heart disease single-cell dataset from Hill et al. / public CHD atlas."
+    source: "data/chd30k_annotated.h5ad"
+    label_key: "celltype"
+    batch_key: "donor"
+    min_cells_fraction: 0.01
+
+benchmark:
+  k_values: [200, 500, 1000, 1500, 2000, 3000, 6000]
+  n_pcs: 30
+  n_neighbors: 15
+  random_state: 7
+  methods:
+    - "Seurat v3"
+    - "Seurat"
+    - "scran MV"
+    - "SCT proxy"
