@@ -6,7 +6,7 @@ Companion code for the poster:
 
 Authors: Syed Faizan, Binte Zehra, Bakhrom K. Berdiev
 
-This repository is intentionally lightweight. It contains the poster PDF and the scripts used to organize the HVG-selection benchmark workflow. Large datasets and generated result tables are not included.
+This repository is intentionally lightweight. It contains the poster PDF, scripts used to organize the HVG-selection benchmark workflow, and a compact full-dataset example run. Large raw datasets are not included.
 
 ## Poster
 
@@ -41,6 +41,7 @@ If a batch column is available, the scripts can also report batch LISI.
 .
 ├── configs/          # Example dataset configuration
 ├── data/             # Local data location, ignored by git
+├── docs/example_results/
 ├── docs/poster/      # Poster PDF
 ├── scripts/          # Run scripts
 └── src/              # Shared helper code used by the scripts
@@ -113,6 +114,26 @@ python scripts/plot_metrics_from_csv.py \
   --output outputs/pbmc10k_metric_panels.png
 ```
 
+Build compact summary tables and figures from metrics/top-gene CSVs:
+
+```bash
+python scripts/build_example_report.py \
+  --metrics outputs/pbmc10k_clustering_metrics.csv \
+  --top-genes outputs/pbmc10k_top_genes.csv \
+  --outdir outputs/pbmc10k_report
+```
+
+Optional UMAP grid from selected HVGs:
+
+```bash
+python scripts/plot_umap_grid.py \
+  --config configs/datasets.local.yaml \
+  --dataset pbmc10k \
+  --scores outputs/pbmc10k_hvg_scores.csv \
+  --k 500 1000 2000 \
+  --output outputs/pbmc10k_umap_grid.png
+```
+
 Generated files go to `outputs/` by default, which is ignored by git.
 
 ## Example Output
@@ -121,8 +142,13 @@ A full-dataset documentation output folder is included so the expected file shap
 
 - [docs/example_results/full_dataset_clustering_metrics.csv](docs/example_results/full_dataset_clustering_metrics.csv)
 - [docs/example_results/full_dataset_metric_panels.png](docs/example_results/full_dataset_metric_panels.png)
+- [docs/example_results/full_dataset_top_genes.csv](docs/example_results/full_dataset_top_genes.csv)
+- [docs/example_results/full_dataset_top_genes_panel.png](docs/example_results/full_dataset_top_genes_panel.png)
+- [docs/example_results/full_dataset_rank_summary.csv](docs/example_results/full_dataset_rank_summary.csv)
+- [docs/example_results/full_dataset_rank_summary.png](docs/example_results/full_dataset_rank_summary.png)
+- [docs/example_results/full_dataset_umap_grid.png](docs/example_results/full_dataset_umap_grid.png)
 
-These outputs were generated from the full labelled dataset available locally in this project workspace (`10,942` cells after loading; `12,205` genes after the 1% detected-cell filter) using `K = 500, 1000, 2000`. The figure is plotted directly from the committed CSV. They are included as a real documentation run, not as the final two-dataset PBMC/CHD poster rerun.
+These outputs were generated from the full labelled dataset available locally in this project workspace (`10,942` cells after loading; `12,205` genes after the 1% detected-cell filter) using `K = 500, 1000, 2000`. The metric panels, rank summary, and top-gene panel are plotted from committed CSVs. The UMAP grid is included as a separate embedding-based visual example. They are included as a real documentation run, not as the final two-dataset PBMC/CHD poster rerun.
 
 ## Current Status
 

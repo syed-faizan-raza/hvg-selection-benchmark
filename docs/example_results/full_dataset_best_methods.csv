@@ -1,0 +1,19 @@
+dataset,K,metric,best_method,best_value
+full_dataset,500,ARI,Seurat,0.7545987612341869
+full_dataset,500,NMI,Seurat v3,0.833205671597731
+full_dataset,500,kNN_acc,SCT proxy,0.961798574300859
+full_dataset,500,ASW,SCT proxy,0.3092963099479675
+full_dataset,500,VarRatio,SCT proxy,3.687911236217636
+full_dataset,500,invLISI,SCT proxy,0.9380312354028312
+full_dataset,1000,ARI,SCT proxy,0.7498155219672835
+full_dataset,1000,NMI,SCT proxy,0.8120445313496439
+full_dataset,1000,kNN_acc,Seurat,0.9657283860354596
+full_dataset,1000,ASW,Seurat v3,0.3235363960266113
+full_dataset,1000,VarRatio,SCT proxy,3.4772605477708054
+full_dataset,1000,invLISI,SCT proxy,0.9394674952781332
+full_dataset,2000,ARI,SCT proxy,0.74003474553153
+full_dataset,2000,NMI,SCT proxy,0.8135557611334093
+full_dataset,2000,kNN_acc,Seurat,0.9687442880643392
+full_dataset,2000,ASW,Seurat v3,0.3266581594944
+full_dataset,2000,VarRatio,Seurat,3.5268680228987654
+full_dataset,2000,invLISI,Seurat v3,0.9404679217693293
