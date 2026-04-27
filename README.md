@@ -152,10 +152,8 @@ These outputs were generated from the full labelled dataset available locally in
 
 ## Current Status
 
-This is a cleaned-up companion repository for the poster, not a fully rerun archive. The included full-dataset documentation run shows the expected workflow output. The remaining final piece is to rerun the complete PBMC/CHD benchmark locally and generate one combined table:
+This is a cleaned and shareable companion repository for the HVG-selection benchmarking project. Large raw datasets and full intermediate objects are not committed because of size constraints, but the repository includes scripts, reusable helper modules, the poster, and compact example outputs from a local full-dataset run.
 
-```text
-dataset, method, K, ARI, NMI, kNN_acc, ASW, VarRatio, invLISI
-```
+The included example results demonstrate the workflow on a dataset with `10,942` cells and `12,205` genes after filtering. Outputs include clustering metrics, method ranking summaries, top-gene tables, gene-overlap summaries, metric panels, and UMAP visualizations.
 
-Once that table is regenerated, the poster's PBMC-versus-CHD clustering statements can be reproduced directly from code.
+The workflow can be rerun locally by editing `configs/datasets.local.yaml` to point to a local `.h5ad`, 10x `.h5`, or 10x matrix directory.
