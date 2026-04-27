@@ -118,16 +118,16 @@ Generated files go to `outputs/` by default, which is ignored by git.
 
 ## Example Output
 
-A small example output folder is included so the expected file shapes are visible without rerunning the full analysis:
+A full-dataset documentation output folder is included so the expected file shapes are visible without rerunning the analysis:
 
-- [docs/example_results/example_clustering_metrics.csv](docs/example_results/example_clustering_metrics.csv)
-- [docs/example_results/example_umap_grid.png](docs/example_results/example_umap_grid.png)
+- [docs/example_results/full_dataset_clustering_metrics.csv](docs/example_results/full_dataset_clustering_metrics.csv)
+- [docs/example_results/full_dataset_umap_grid.png](docs/example_results/full_dataset_umap_grid.png)
 
-These are example-format outputs, not the final PBMC/CHD benchmark results.
+These outputs were generated from the full labelled dataset available locally in this project workspace (`10,942` cells after loading; `12,205` genes after the 1% detected-cell filter) using `K = 500, 1000, 2000`. They are included as a real documentation run, not as the final two-dataset PBMC/CHD poster rerun.
 
 ## Current Status
 
-This is a cleaned-up companion repository for the poster, not a fully rerun archive. The missing final piece is to rerun the benchmark locally and generate a single table:
+This is a cleaned-up companion repository for the poster, not a fully rerun archive. The included full-dataset documentation run shows the expected workflow output. The remaining final piece is to rerun the complete PBMC/CHD benchmark locally and generate one combined table:
 
 ```text
 dataset, method, K, ARI, NMI, kNN_acc, ASW, VarRatio, invLISI
