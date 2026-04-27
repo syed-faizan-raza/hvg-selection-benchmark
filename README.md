@@ -105,13 +105,12 @@ python scripts/run_clustering_benchmark.py \
   --k 200 500 1000 1500 2000 3000 6000
 ```
 
-Plot a method-by-K UMAP grid:
+Plot metric panels from a benchmark CSV:
 
 ```bash
-python scripts/plot_umap_grid.py \
-  --config configs/datasets.local.yaml \
-  --dataset pbmc10k \
-  --k 500 1000 2000
+python scripts/plot_metrics_from_csv.py \
+  --metrics outputs/pbmc10k_clustering_metrics.csv \
+  --output outputs/pbmc10k_metric_panels.png
 ```
 
 Generated files go to `outputs/` by default, which is ignored by git.
@@ -121,9 +120,9 @@ Generated files go to `outputs/` by default, which is ignored by git.
 A full-dataset documentation output folder is included so the expected file shapes are visible without rerunning the analysis:
 
 - [docs/example_results/full_dataset_clustering_metrics.csv](docs/example_results/full_dataset_clustering_metrics.csv)
-- [docs/example_results/full_dataset_umap_grid.png](docs/example_results/full_dataset_umap_grid.png)
+- [docs/example_results/full_dataset_metric_panels.png](docs/example_results/full_dataset_metric_panels.png)
 
-These outputs were generated from the full labelled dataset available locally in this project workspace (`10,942` cells after loading; `12,205` genes after the 1% detected-cell filter) using `K = 500, 1000, 2000`. They are included as a real documentation run, not as the final two-dataset PBMC/CHD poster rerun.
+These outputs were generated from the full labelled dataset available locally in this project workspace (`10,942` cells after loading; `12,205` genes after the 1% detected-cell filter) using `K = 500, 1000, 2000`. The figure is plotted directly from the committed CSV. They are included as a real documentation run, not as the final two-dataset PBMC/CHD poster rerun.
 
 ## Current Status
 
