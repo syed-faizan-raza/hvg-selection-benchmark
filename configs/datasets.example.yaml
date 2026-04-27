@@ -2,8 +2,8 @@
 # Raw data are intentionally not committed to the repository.
 
 datasets:
-  pbmc3k_smoke:
-    description: "Built-in Scanpy PBMC3k dataset for quick local smoke tests."
+  pbmc3k_example:
+    description: "Built-in Scanpy PBMC3k dataset for quick local examples."
     source: "pbmc3k"
     label_key:
     batch_key:
