@@ -66,6 +66,12 @@ igraph
 scikit-misc
 ```
 
+Or install the listed dependencies with:
+
+```bash
+pip install -r requirements.txt
+```
+
 ## Data
 
 Raw data are not committed.
@@ -109,6 +115,15 @@ python scripts/plot_umap_grid.py \
 ```
 
 Generated files go to `outputs/` by default, which is ignored by git.
+
+## Example Output
+
+A small example output folder is included so the expected file shapes are visible without rerunning the full analysis:
+
+- [docs/example_results/example_clustering_metrics.csv](docs/example_results/example_clustering_metrics.csv)
+- [docs/example_results/example_umap_grid.png](docs/example_results/example_umap_grid.png)
+
+These are example-format outputs, not the final PBMC/CHD benchmark results.
 
 ## Current Status
 
